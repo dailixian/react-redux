@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { IStore } from "../redux/store";
+import { RootStoreType } from "../redux/store";
 
 interface IDisplayProps {
     counterNumber: number
@@ -18,7 +18,7 @@ export class Display extends Component<IDisplayProps> {
   }
 }
 
-const mapState = (store: IStore) => {
+const mapState = (store: RootStoreType) => {
     console.log("inside display: store is", store);
     return {counterNumber: store.counterReducer.number }
 };
