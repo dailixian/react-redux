@@ -4,6 +4,7 @@ import Display from "./components/Display";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import Operations from "./components/Operations";
+import ShowState from "./components/ShowState";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Display></Display>
         <Toolbar></Toolbar>
         <Operations></Operations>
+        <ShowState></ShowState>
       </Provider>
     </>
   );
