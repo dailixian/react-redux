@@ -6,7 +6,7 @@ const initialState = {
 
 interface IAction {
     type: string,
-    payload?: unknown
+    payload?: any
 }
 
 function counterReducer(state = initialState, action: IAction) {
@@ -18,6 +18,19 @@ function counterReducer(state = initialState, action: IAction) {
 
     if (action.type === 'DECREMENT') {
         return { ...state, number: state.number - 1, decrementCount: state.decrementCount + 1 }
+    }
+
+    if (action.type === 'ADD') {
+        return { ...state, number: state.number +  action.payload}
+    }
+    if (action.type === 'SUBTRACT') {
+        return { ...state, number: state.number -  action.payload}
+    }
+    if (action.type === 'MULTIPLY') {
+        return { ...state, number: state.number *  action.payload}
+    }
+    if (action.type === 'DIVIDE') {
+        return { ...state, number: state.number / action.payload}
     }
 
     return { ...state };
